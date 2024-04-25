@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function flipCard(card) {
         if (cardsFlipped.length === 1 && cardsFlipped[0] === card) {
+            playSound('card-flip.mp3');
             return; // Prevent flipping the same card twice
         }
 
