@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         card.classList.add('flip');
+        playSound('card-flip.mp3'); // Play flip sound
         cardsFlipped.push(card);
 
         if (cardsFlipped.length === 2) {
