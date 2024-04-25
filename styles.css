@@ -1,0 +1,86 @@
+/* styles.css */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+    background-color: #ecf0f1; /* Light grey background for a soft look */
+    margin: 0;
+    color: #2c3e50; /* Dark blue-grey text color for better readability */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px; /* Provides space between the title and game board */
+    color: #2c3e50; /* Stylish text color that fits with the theme */
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 120px); /* Slightly larger cards */
+    gap: 15px; /* Increased gap for better spacing */
+    padding: 20px; /* Padding around the game board */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 10px; /* Rounded corners for the game board */
+    background-color: #ffffff; /* White background for contrast */
+}
+
+.card {
+    width: 120px;
+    height: 120px;
+    cursor: pointer;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    border-radius: 8px; /* Rounded corners for the cards */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Soft shadow for each card */
+}
+
+.card.flip {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px; /* Ensures the rounded corners affect both sides */
+}
+
+.card-front {
+    background-color: #bdc3c7; /* Lighter grey for the front */
+}
+
+.card-back {
+    background-color: #3498db; /* Blue background for the back */
+    color: white; /* Ensures text is visible if added */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: rotateY(180deg);
+}
+
+#reset-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #3498db; /* Blue to match the card-back theme */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-top: 20px; /* Spacing from the game board */
+    display: block; /* Ensures it centers below the board */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#reset-button:hover {
+    background-color: #2980b9; /* Darker shade of blue for hover effect */
+}
